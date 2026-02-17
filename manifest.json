@@ -8,17 +8,22 @@
   "license": "GPLv2",
   "repository": "https://github.com/WerWolv/noctalia-kde-connect",
   "description": "A Plugin integrating your mobile devices into a panel using KDEConnect",
-  "tags": ["Bar", "Panel", "Utility", "System"],
+  "tags": [
+    "Bar",
+    "Panel",
+    "Utility",
+    "System"
+  ],
   "entryPoints": {
     "main": "Main.qml",
     "barWidget": "BarWidget.qml",
+    "controlCenterWidget": "ControlCenterWidget.qml",
     "panel": "Panel.qml"
   },
   "dependencies": {
     "plugins": []
   },
   "metadata": {
-    "defaultSettings": {
-    }
+    "defaultSettings": {}
   }
 }
