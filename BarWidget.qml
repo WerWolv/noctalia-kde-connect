@@ -31,26 +31,11 @@ Item {
   BarPill {
     id: pill
 
-    function getIcon(device) {
-      if (!KDEConnect.daemonAvailable)
-        return "exclamation-circle"
-
-      if (device === null || !device.reachable)
-        return "device-mobile-off"
-
-      if (device.notificationIds.length > 0)
-        return "device-mobile-message"
-      else if (device.charging)
-        return "device-mobile-charging"
-      else
-        return "device-mobile"
-    }
-
     screen: root.screen
     oppositeDirection: BarService.getPillDirection(root)
     customIconColor: Color.resolveColorKeyOptional(root.iconColorKey)
     customTextColor: Color.resolveColorKeyOptional(root.textColorKey)
-    icon: getIcon(KDEConnect.mainDevice)
+    icon: KDEConnectUtils.getIcon(KDEConnect.mainDevice, KDEConnect.daemonAvailable)
     autoHide: false // Important to be false so we can hover as long as we want
     text: !KDEConnect.daemonAvailable || KDEConnect.mainDevice === null || KDEConnect.mainDevice.battery === -1 ? "" : (KDEConnect.mainDevice.battery + "%")
     tooltipText: pluginApi?.tr("bar.tooltip")

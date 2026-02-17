@@ -30,18 +30,5 @@
   },
   "bar": {
     "tooltip": "Connected Devices"
-  },
-  "control_center_widget": {
-    "tooltip": {
-      "battery": "Battery",
-      "state": "State"
-    },
-    "state": {
-      "unavailable": "Unavailable",
-      "no-device": "No device",
-      "disconnected": "Disconnected",
-      "not-paired": "Not paired",
-      "connected": "Connected"
-    }
   }
 }
