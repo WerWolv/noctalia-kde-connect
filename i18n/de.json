@@ -30,5 +30,15 @@
   },
   "bar": {
     "tooltip": "Verbundene Geräte"
+  },
+  "control_center": {
+    "state-label": "Status",
+    "state": {
+      "connected": "Verbunden",
+      "disconnected": "Getrennt",
+      "unavailable": "Nicht verfügbar",
+      "no-device": "Kein Gerät",
+      "not-paired": "Nicht gekoppelt"
+    }
   }
 }

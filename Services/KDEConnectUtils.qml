@@ -18,19 +18,20 @@ QtObject {
       return "device-mobile"
   }
 
-  function getConnectionState(device, daemonAvailable) {
+  // Returns raw state keys for translation
+  function getConnectionStateKey(device, daemonAvailable) {
     if (!daemonAvailable)
-      return "Unavailable"
+      return "control_center.state.unavailable"
 
     if (device === null)
-      return "No device"
+      return "control_center.state.no-device"
 
     if (!device.reachable)
-      return "Disconnected"
+      return "control_center.state.disconnected"
 
     if (!device.paired)
-      return "Not paired"
+      return "control_center.state.not-paired"
 
-    return "Connected"
+    return "control_center.state.connected"
   }
 }
