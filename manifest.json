@@ -1,7 +1,7 @@
 {
   "id": "kde-connect",
   "name": "KDE Connect",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "minNoctaliaVersion": "4.4.0",
   "author": "WerWolv",
   "official": false,
