@@ -4,26 +4,24 @@ import qs.Widgets
 import "./Services"
 
 NIconButtonHot {
-		property ShellScreen screen
-		property var pluginApi: null
+    property ShellScreen screen
+    property var pluginApi: null
 
-		function getTooltip(device) {
-				const batteryLabel = pluginApi?.tr("panel.card.battery") || "Battery"
-				const stateLabel = pluginApi?.tr("control_center.state-label") || "State"
-				
-				const batteryLine = (device !== null && device.reachable && device.paired && device.battery !== -1)
-						? (batteryLabel + ": " + device.battery + "%\n")
-						: ""
+    function getTooltip(device) {
+        const batteryLabel = pluginApi?.tr("panel.card.battery") || "Battery";
+        const stateLabel = pluginApi?.tr("control_center.state-label") || "State";
 
-				const stateKey = KDEConnectUtils.getConnectionStateKey(device, KDEConnect.daemonAvailable)
-				const stateValue = pluginApi?.tr(stateKey) || "Unknown"
-				const stateLine = stateLabel + ": " + stateValue
+        const batteryLine = (device !== null && device.reachable && device.paired && device.battery !== -1) ? (batteryLabel + ": " + device.battery + "%\n") : "";
 
-				return batteryLine + stateLine
-		}
+        const stateKey = KDEConnectUtils.getConnectionStateKey(device, KDEConnect.daemonAvailable);
+        const stateValue = pluginApi?.tr(stateKey) || "Unknown";
+        const stateLine = stateLabel + ": " + stateValue;
 
-		icon: KDEConnectUtils.getConnectionStateIcon(KDEConnect.mainDevice, KDEConnect.daemonAvailable)
-		tooltipText: getTooltip(KDEConnect.mainDevice)
+        return batteryLine + stateLine;
+    }
 
-		onClicked: pluginApi?.togglePanel(screen, this)
+    icon: KDEConnectUtils.getConnectionStateIcon(KDEConnect.mainDevice, KDEConnect.daemonAvailable)
+    tooltipText: getTooltip(KDEConnect.mainDevice)
+
+    onClicked: pluginApi?.togglePanel(screen, this)
 }
