@@ -24,7 +24,7 @@
     "kdeconnect-error": {
       "no-devices": "No device running KDE Connect found",
       "unavailable-title": "kdeconnectd does not seem to be running!",
-      "unavailable-desc": "Make sure you've installed the KDE Connect Application on your system and that it has started the kdeconnectd daemon",
+      "unavailable-desc": "Make sure you've installed the KDE Connect Application on your system and that it has started the kdeconnectd daemon. On NixOS this may also be caused by the `pkgs.kdePackages.qttools` package being missing.",
       "device-unavailable": "Device is currently unavailable"
     }
   },
