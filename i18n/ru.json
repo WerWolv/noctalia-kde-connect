@@ -29,6 +29,16 @@
     }
   },
   "bar": {
-    "tooltip": "Подключённые устройства"
+    "tooltip": "Подключенные устройства"
+  },
+  "control_center": {
+    "state-label": "Статус",
+    "state": {
+      "connected": "Подключено",
+      "disconnected": "Не подключено",
+      "unavailable": "Недоступно",
+      "no-device": "Нет устройства",
+      "not-paired": "Нет сопряжения"
+    }
   }
 }
