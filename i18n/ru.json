@@ -33,7 +33,7 @@
     }
   },
    "bar": {
-    "tooltip": "Connected Devices"
+    "tooltip": "Подключённые устройства"
   },
   "control_center": {
     "state-label": "Статус",
