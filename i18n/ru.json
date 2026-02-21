@@ -32,6 +32,9 @@
       "unavailable-desc": "Убедитесь, что qdbus (или qdbus6 на некоторых системах) установлен в вашей системе"
     }
   },
+   "bar": {
+    "tooltip": "Connected Devices"
+  },
   "control_center": {
     "state-label": "Статус",
     "state": {
