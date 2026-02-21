@@ -24,12 +24,13 @@
     "kdeconnect-error": {
       "no-devices": "Устройства с KDE Connect не обнаружены",
       "unavailable-title": "Похоже, kdeconnectd не запущен!",
-      "unavailable-desc": "Убедитесь, что KDE Connect установлен на системе и служба kdeconnectd работает.",
-      "device-unavailable": "Устройство сейчас недоступно"
+      "unavailable-desc": "Убедитесь, что KDE Connect установлен в системе и служба kdeconnectd работает.",
+       "device-unavailable": "Устройство сейчас недоступно"
+    },
+    "qdbus-error": {
+      "unavailable-title": "Не удаётся найти qdbus!",
+      "unavailable-desc": "Убедитесь, что qdbus (или qdbus6 на некоторых системах) установлен в вашей системе"
     }
-  },
-  "bar": {
-    "tooltip": "Подключённые устройства"
   },
   "control_center": {
     "state-label": "Статус",
