@@ -117,6 +117,7 @@ Item {
       spacing: Style.marginL
 
       NBox {
+        id: headerBox
         Layout.fillWidth: true
         implicitHeight: headerRow.implicitHeight + (Style.marginXL)
 
@@ -186,11 +187,19 @@ Item {
 
         Rectangle {
           Layout.fillWidth: true
-          Layout.fillHeight: true
           color: Color.mSurfaceVariant
           radius: Style.radiusM
 
+          Component.onCompleted: {
+            root.contentPreferredHeight = headerBox.height + contentLayout.implicitHeight + (Style.marginL * 8)
+          }
+
+          Component.onDestruction: {
+            root.contentPreferredHeight = 360 * Style.uiScaleRatio * Settings.data.ui.fontDefaultScale
+          }
+
           ColumnLayout {
+            id: contentLayout
             anchors {
               fill: parent
               margins: Style.marginL
