@@ -18,6 +18,7 @@
     "other-devices": "Other Devices",
     "send-file-picker": "Pick file to send to device",
     "send-file": "Send File",
+    "browse-device": "Browse Device Files",
     "find-device": "Find my Device",
     "pair": "Pair with Device",
     "unpair": "Unpair Device",

@@ -73,6 +73,11 @@ QtObject {
     proc.running = true;
   }
 
+    function browseFiles(deviceId: string): void {
+    const proc = browseFilesComponent.createObject(root, { deviceId: deviceId });
+    proc.running = true;
+  }
+
   // Share a file with a device
   function shareFile(deviceId: string, filePath: string): void {
     var proc = shareComponent.createObject(root, {
@@ -348,6 +353,18 @@ QtObject {
       id: proc
       property string deviceId: ""
       command: [qdbusCmd, "org.kde.kdeconnect", "/modules/kdeconnect/devices/" + deviceId + "/findmyphone", "org.kde.kdeconnect.device.findmyphone.ring"]
+      stdout: StdioCollector {
+        onStreamFinished: proc.destroy()
+      }
+    }
+  }
+
+  // SFTP Browse component
+  property Component browseFilesComponent: Component {
+    Process {
+      id: proc
+      property string deviceId: ""
+      command: [qdbusCmd, "org.kde.kdeconnect", "/modules/kdeconnect/devices/" + deviceId + "/sftp", "org.kde.kdeconnect.device.sftp.startBrowsing"]
       stdout: StdioCollector {
         onStreamFinished: proc.destroy()
       }
