@@ -368,9 +368,7 @@ QtObject {
     Process {
       id: mountProc
       property string deviceId: ""
-
       command: busctlCall("/modules/kdeconnect/devices/" + deviceId + "/sftp", "org.kde.kdeconnect.device.sftp", "mountAndWait")
-
       stdout: StdioCollector {
         onStreamFinished: rootDirProc.running = true
       }
@@ -381,8 +379,10 @@ QtObject {
           onStreamFinished: {
             const dirs = busctlData(text);
             const path = Object.keys(dirs[0])[0];
-            if (!Qt.openUrlExternally("file://" + path))
-            Logger.e("KDEConnect", "Failed to open file manager for path:", path);
+            if (!Qt.openUrlExternally("file://" + path)) {
+              Logger.e("KDEConnect", "Failed to open file manager for path:", path);
+            }
+
             mountProc.destroy();
           }
         }
