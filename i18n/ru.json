@@ -44,8 +44,8 @@
       "unavailable": "Недоступно",
       "no-device": "Нет устройства",
       "not-paired": "Нет сопряжения"
-       }
-     },
+    }
+  },
       "settings": {
       "no-device-connected-hide": {
       "label": "Скрыть если недоступно",
