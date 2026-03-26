@@ -46,8 +46,8 @@
       "not-paired": "Нет сопряжения"
     }
   },
-      "settings": {
-      "no-device-connected-hide": {
+  "settings": {
+    "no-device-connected-hide": {
       "label": "Скрыть если недоступно",
       "description": "Полностью скрыть кнопку при отсутствии подключённых устройств"
     }
