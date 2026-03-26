@@ -30,7 +30,7 @@
     },
     "busctl-error": {
       "unavailable-title": "Не удаётся найти busctl!",
-      "unavailable-desc": "Убедитесь, что busctl установлен в вашей системе"
+      "unavailable-desc": "Убедитесь, что busctl (часть systemd) установлен в вашей системе"
     }
   },
    "bar": {
@@ -44,6 +44,12 @@
       "unavailable": "Недоступно",
       "no-device": "Нет устройства",
       "not-paired": "Нет сопряжения"
+       }
+     },
+      "settings": {
+      "no-device-connected-hide": {
+      "label": "Скрыть если недоступно",
+      "description": "Полностью скрыть кнопку при отсутствии подключённых устройств"
     }
   }
 }
