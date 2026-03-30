@@ -50,6 +50,10 @@
     "no-device-connected-hide": {
       "label": "Verstecken wenn nicht verbunden",
       "description": "Verstecke den Knopf in der Leiste, wenn kein Gerät verbunden ist"
+    },
+    "iconColor": {
+      "label": "Symbolfarbe",
+      "desc": "Farbe des Symbols in der Leiste"
     }
   }
 }
