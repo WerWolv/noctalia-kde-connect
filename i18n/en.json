@@ -50,6 +50,10 @@
     "no-device-connected-hide": {
       "label": "Hide if unavailable",
       "description": "Hide the bar button entirely if no device is connected"
+    },
+    "iconColor": {
+      "label": "Icon Color",
+      "desc": "Color of the icon in the bar"
     }
   }
 }

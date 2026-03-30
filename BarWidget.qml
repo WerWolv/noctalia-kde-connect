@@ -19,14 +19,21 @@ Item {
   // Widget properties passed from Bar.qml for per-instance settings
   property string widgetId: ""
   property string section: ""
+  property int sectionWidgetIndex: -1
+  property int sectionWidgetsCount: 0
 
   // Explicit screenName property ensures reactive binding when screen changes
   readonly property string screenName: screen ? screen.name : ""
 
   implicitWidth: pill.width
   implicitHeight: pill.height
-  
+
   property bool hideIfNoDeviceConnected: !(root.pluginApi?.mainInstance?.hideIfNoDeviceConnected ?? false)
+
+  property var cfg: pluginApi?.pluginSettings || ({})
+  property var defaults: pluginApi?.manifest?.metadata?.defaultSettings || ({})
+
+  property string iconColorKey: cfg.iconColor ?? defaults.iconColor ?? "none"
 
   visible: !hideIfNoDeviceConnected ? true : KDEConnect.anyDevicesConnected;
   opacity: (!hideIfNoDeviceConnected ? true : KDEConnect.anyDevicesConnected) ? 1.0 : 0.0;
