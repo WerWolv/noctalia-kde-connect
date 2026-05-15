@@ -54,6 +54,10 @@
     "iconColor": {
       "label": "Symbolfarbe",
       "desc": "Farbe des Symbols in der Leiste"
+    },
+    "always-show-battery": {
+      "label": "Akku immer anzeigen",
+      "description": "Akkustand immer in der Leiste anzeigen, nicht nur beim Hovern"
     }
   }
 }

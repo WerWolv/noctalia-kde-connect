@@ -54,6 +54,10 @@
     "iconColor": {
       "label": "Icon Color",
       "desc": "Color of the icon in the bar"
+    },
+    "always-show-battery": {
+      "label": "Always show battery",
+      "description": "Always show the battery percentage in the bar, not just on hover"
     }
   }
 }

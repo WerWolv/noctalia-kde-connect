@@ -40,5 +40,19 @@
       "no-device": "Aucun appareil",
       "not-paired": "Non couplé"
     }
+  },
+  "settings": {
+    "no-device-connected-hide": {
+      "label": "Masquer si indisponible",
+      "description": "Masquer entièrement le bouton si aucun appareil n'est connecté"
+    },
+    "always-show-battery": {
+      "label": "Toujours afficher la batterie",
+      "description": "Toujours afficher le pourcentage de batterie dans la barre, pas seulement au survol"
+    },
+    "iconColor": {
+      "label": "Couleur de l'icône",
+      "desc": "Couleur de l'icône dans la barre"
+    }
   }
 }

@@ -12,6 +12,7 @@ ColumnLayout {
   property var defaults: pluginApi?.manifest?.metadata?.defaultSettings || ({})
 
   property bool hideIfNoDeviceConnected: pluginApi?.mainInstance?.hideIfNoDeviceConnected ?? (pluginApi?.pluginSettings?.hideIfNoDeviceConnected ?? false)
+  property bool alwaysShowBattery: pluginApi?.mainInstance?.alwaysShowBattery ?? (pluginApi?.pluginSettings?.alwaysShowBattery ?? false)
 
   property string iconColor: cfg.iconColor ?? defaults.iconColor ?? "none"
 
@@ -31,6 +32,16 @@ ColumnLayout {
         }
     }
 
+    NToggle {
+        label: pluginApi?.tr("settings.always-show-battery.label")
+        description: pluginApi?.tr("settings.always-show-battery.description")
+
+        checked: root.alwaysShowBattery
+        onToggled: function(checked) {
+            root.alwaysShowBattery = checked
+        }
+    }
+
     NColorChoice {
       label: pluginApi?.tr("settings.iconColor.label")
       description: pluginApi?.tr("settings.iconColor.desc")
@@ -46,6 +57,7 @@ ColumnLayout {
     }
 
     pluginApi.pluginSettings.hideIfNoDeviceConnected = root.hideIfNoDeviceConnected;
+    pluginApi.pluginSettings.alwaysShowBattery = root.alwaysShowBattery;
     pluginApi.pluginSettings.iconColor = root.iconColor;
     pluginApi.saveSettings();
 
