@@ -26,14 +26,14 @@
       "no-devices": "Устройства с KDE Connect не обнаружены",
       "unavailable-title": "Похоже, kdeconnectd не запущен!",
       "unavailable-desc": "Убедитесь, что KDE Connect установлен в системе и служба kdeconnectd работает.",
-       "device-unavailable": "Устройство сейчас недоступно"
+      "device-unavailable": "Устройство сейчас недоступно"
     },
     "busctl-error": {
       "unavailable-title": "Не удаётся найти busctl!",
       "unavailable-desc": "Убедитесь, что busctl (часть systemd) установлен в вашей системе"
     }
   },
-   "bar": {
+  "bar": {
     "tooltip": "Подключённые устройства"
   },
   "control_center": {
@@ -50,6 +50,14 @@
     "no-device-connected-hide": {
       "label": "Скрыть если недоступно",
       "description": "Полностью скрыть кнопку при отсутствии подключённых устройств"
+    },
+    "always-show-battery": {
+      "label": "Всегда показывать батарею",
+      "description": "Всегда отображать уровень заряда в панели, а не только при наведении"
+    },
+    "iconColor": {
+      "label": "Цвет иконки",
+      "desc": "Цвет иконки в панели"
     }
   }
 }

@@ -45,5 +45,19 @@
       "no-device": "Nenhum dispositivo",
       "not-paired": "Não pareado"
     }
+  },
+  "settings": {
+    "no-device-connected-hide": {
+      "label": "Ocultar se indisponível",
+      "description": "Ocultar completamente o botão se nenhum dispositivo estiver conectado"
+    },
+    "always-show-battery": {
+      "label": "Sempre mostrar bateria",
+      "description": "Sempre mostrar a porcentagem de bateria na barra, não apenas ao passar o mouse"
+    },
+    "iconColor": {
+      "label": "Cor do ícone",
+      "desc": "Cor do ícone na barra"
+    }
   }
 }

@@ -29,11 +29,14 @@ Item {
   implicitHeight: pill.height
 
   property bool hideIfNoDeviceConnected: !(root.pluginApi?.mainInstance?.hideIfNoDeviceConnected ?? false)
+  property bool alwaysShowBattery: cfg.alwaysShowBattery ?? defaults.alwaysShowBattery ?? false
 
   property var cfg: pluginApi?.pluginSettings || ({})
   property var defaults: pluginApi?.manifest?.metadata?.defaultSettings || ({})
 
   property string iconColorKey: cfg.iconColor ?? defaults.iconColor ?? "none"
+
+  readonly property string batteryText: !KDEConnect.daemonAvailable || KDEConnect.mainDevice === null || KDEConnect.mainDevice.battery === -1 ? "" : (KDEConnect.mainDevice.battery + "%")
 
   visible: !hideIfNoDeviceConnected ? true : KDEConnect.anyDevicesConnected;
   opacity: (!hideIfNoDeviceConnected ? true : KDEConnect.anyDevicesConnected) ? 1.0 : 0.0;
@@ -48,7 +51,8 @@ Item {
     customTextColor: Color.resolveColorKeyOptional(root.textColorKey)
     icon: KDEConnectUtils.getConnectionStateIcon(KDEConnect.mainDevice, KDEConnect.daemonAvailable)
     autoHide: false // Important to be false so we can hover as long as we want
-    text: !KDEConnect.daemonAvailable || KDEConnect.mainDevice === null || KDEConnect.mainDevice.battery === -1 ? "" : (KDEConnect.mainDevice.battery + "%")
+    forceOpen: root.alwaysShowBattery
+    text: root.batteryText
     tooltipText: pluginApi?.tr("bar.tooltip")
     onClicked: {
       if (pluginApi) {
