@@ -147,7 +147,7 @@ QtObject {
     onExited: (exitCode, exitStatus) => {
       root.daemonAvailable = exitCode == 0;
       if (root.daemonAvailable) {
-        forceOnNetworkChange.running = true;
+        getDevicesProc.running = true;
       } else {
         root.devices = []
         root.mainDevice = null
